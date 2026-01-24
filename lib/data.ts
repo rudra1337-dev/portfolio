@@ -23,6 +23,8 @@ export const personalInfo = {
 
 
 
+
+
 //SKILLS DATA
 
 
@@ -159,13 +161,7 @@ export const projects = [
 
 
 
-
-
-
-
 //BLOG POST DATA
-
-
 
 
 

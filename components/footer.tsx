@@ -56,6 +56,13 @@ export function Footer() {
             </div>
           </div>
 
+
+
+
+
+
+
+
           {/* Quick Links */}
           <div>
             <h3 className="font-semibold text-foreground mb-4">Quick Links</h3>
@@ -72,6 +79,12 @@ export function Footer() {
               ))}
             </ul>
           </div>
+
+
+
+
+
+
 
           {/* Contact Info */}
           <div>
@@ -91,6 +104,15 @@ export function Footer() {
             </ul>
           </div>
         </div>
+
+
+
+
+
+
+
+
+
 
         {/* Bottom Bar */}
         <div className="py-6 border-t border-border flex flex-col sm:flex-row items-center justify-between gap-4">

@@ -7,6 +7,14 @@ import { Mail, Phone, MapPin, Send, Github, Linkedin, Twitter, CheckCircle2 } fr
 import { Button } from "@/components/ui/button"
 import { personalInfo } from "@/lib/data"
 
+
+import emailjs from "@emailjs/browser"
+
+
+
+
+
+
 const contactMethods = [
   {
     icon: Mail,
@@ -56,20 +64,53 @@ export default function ContactPage() {
     }))
   }
 
+
+
+
+
+
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setIsSubmitting(true)
 
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 1500))
 
-    setIsSubmitting(false)
-    setIsSubmitted(true)
-    setFormData({ name: "", email: "", subject: "", message: "" })
+    //EMAIL JS USED HERE
 
-    // Reset success message after 5 seconds
-    setTimeout(() => setIsSubmitted(false), 5000)
+
+    try {
+      // Send the email
+      await emailjs.send(
+        "service_portfolio",       // Your Service ID
+        "template_5a9usum",       // Your Template ID
+        {
+          name: formData.name,     // Sender name
+          email: formData.email,   // Sender email (Reply-to)
+          subject: formData.subject,
+          message: formData.message,
+          time: new Date().toLocaleString(), // Optional, for your template
+        },
+        "rwbHAW5UN5xopcYG_"       // Your Public Key
+      )
+
+      // Success feedback
+      setIsSubmitting(false)
+      setIsSubmitted(true)
+      setFormData({ name: "", email: "", subject: "", message: "" })
+
+      // Hide success message after 5 seconds
+      setTimeout(() => setIsSubmitted(false), 5000)
+    } catch (error) {
+      console.error("EmailJS Error:", error)
+      setIsSubmitting(false)
+      alert("Oops! Something went wrong. Please try again.")
+    }
   }
+
+
+
+
+
 
   return (
     <div className="pt-20">
@@ -81,12 +122,18 @@ export default function ContactPage() {
               Get In Touch
             </h1>
             <p className="text-xl text-muted-foreground leading-relaxed">
-              Have a project in mind or just want to chat? I&apos;d love to hear from you. 
+              Have a project in mind or just want to chat? I&apos;d love to hear from you.
               Fill out the form below or reach out through any of the contact methods.
             </p>
           </div>
         </div>
       </section>
+
+
+
+
+
+
 
       {/* Contact Content */}
       <section className="py-16 lg:py-24 bg-background">
@@ -101,6 +148,14 @@ export default function ContactPage() {
                 <p className="text-muted-foreground mb-8">
                   Feel free to reach out through any of these channels. I typically respond within 24 hours.
                 </p>
+
+
+
+
+
+
+
+
 
                 {/* Contact Methods */}
                 <div className="space-y-6 mb-10">
@@ -129,6 +184,16 @@ export default function ContactPage() {
                   ))}
                 </div>
 
+
+
+
+
+
+
+
+
+
+
                 {/* Social Links */}
                 <div>
                   <h3 className="font-semibold text-foreground mb-4">
@@ -150,6 +215,16 @@ export default function ContactPage() {
                   </div>
                 </div>
               </div>
+
+
+
+
+
+
+
+
+
+
 
               {/* Contact Form */}
               <div className="lg:col-span-3">
@@ -288,7 +363,7 @@ export default function ContactPage() {
               Looking Forward to Hearing From You
             </h2>
             <p className="text-muted-foreground leading-relaxed">
-              Whether you have a question, want to discuss a project, or just want to say hello, 
+              Whether you have a question, want to discuss a project, or just want to say hello,
               I&apos;m always open to connecting with fellow developers and potential collaborators.
               Let&apos;s build something amazing together!
             </p>
