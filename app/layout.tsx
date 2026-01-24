@@ -11,7 +11,7 @@ import './globals.css'
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 
 export const metadata: Metadata = {
-  title: 'Alex Chen | Full Stack Developer',
+  title: 'Rudra | Full Stack Developer',
   description: 'Full Stack Developer specializing in React, Next.js, and Node.js. Building accessible, pixel-perfect digital experiences.',
   generator: 'v0.app',
   icons: {

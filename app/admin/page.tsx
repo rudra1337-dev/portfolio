@@ -57,22 +57,20 @@ export default function AdminPage() {
                   <button
                     key={tab.id}
                     onClick={() => setActiveTab(tab.id)}
-                    className={`w-full flex items-center justify-between px-4 py-3 rounded-xl text-sm font-medium transition-all ${
-                      activeTab === tab.id
+                    className={`w-full flex items-center justify-between px-4 py-3 rounded-xl text-sm font-medium transition-all ${activeTab === tab.id
                         ? "bg-primary text-primary-foreground"
                         : "text-muted-foreground hover:text-foreground hover:bg-secondary"
-                    }`}
+                      }`}
                   >
                     <div className="flex items-center gap-3">
                       <tab.icon className="h-5 w-5" />
                       {tab.label}
                     </div>
                     {tab.count !== null && (
-                      <span className={`text-xs px-2 py-0.5 rounded-full ${
-                        activeTab === tab.id
+                      <span className={`text-xs px-2 py-0.5 rounded-full ${activeTab === tab.id
                           ? "bg-primary-foreground/20"
                           : "bg-secondary"
-                      }`}>
+                        }`}>
                         {tab.count}
                       </span>
                     )}
@@ -96,11 +94,10 @@ export default function AdminPage() {
                   <button
                     key={tab.id}
                     onClick={() => setActiveTab(tab.id)}
-                    className={`flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium whitespace-nowrap transition-all ${
-                      activeTab === tab.id
+                    className={`flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium whitespace-nowrap transition-all ${activeTab === tab.id
                         ? "bg-primary text-primary-foreground"
                         : "bg-secondary text-muted-foreground"
-                    }`}
+                      }`}
                   >
                     <tab.icon className="h-4 w-4" />
                     {tab.label}

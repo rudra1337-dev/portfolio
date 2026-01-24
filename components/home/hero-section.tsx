@@ -10,6 +10,11 @@ import { personalInfo } from "@/lib/data"
 import { FloatingElement, MagneticWrapper, GlowingOrb } from "@/components/3d/floating-element"
 import { Hover3DButton } from "@/components/3d/hover-button"
 
+
+import Image from "next/image"
+
+
+
 export function HeroSection() {
   const containerRef = useRef<HTMLDivElement>(null)
 
@@ -30,6 +35,11 @@ export function HeroSection() {
     return () => container.removeEventListener("mousemove", handleMouseMove)
   }, [])
 
+
+
+
+
+
   return (
     <section
       ref={containerRef}
@@ -47,29 +57,49 @@ export function HeroSection() {
           {/* Avatar */}
           <FloatingElement delay={0} duration={4} yOffset={15} className="mb-8 inline-block">
             <MagneticWrapper strength={0.2}>
-              <motion.div 
+
+
+              <motion.div
                 className="relative w-32 h-32 lg:w-40 lg:h-40 mx-auto cursor-pointer"
                 whileHover={{ scale: 1.1, rotateY: 10 }}
                 whileTap={{ scale: 0.95 }}
                 style={{ transformStyle: "preserve-3d" }}
               >
-                <motion.div 
-                  className="absolute inset-0 bg-gradient-to-tr from-primary to-accent rounded-full opacity-30"
+                {/* Rotating gradient ring */}
+                <motion.div
+                  className="absolute inset-0 rounded-full bg-gradient-to-tr from-primary to-accent opacity-40"
                   animate={{ rotate: 360 }}
                   transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
                 />
-                <div className="absolute inset-1 bg-background/90 backdrop-blur-sm rounded-full" />
-                <div className="absolute inset-2 bg-gradient-to-br from-secondary to-muted rounded-full flex items-center justify-center border border-primary/20">
-                  <span className="text-4xl lg:text-5xl font-bold text-foreground">
-                    {personalInfo.name.split(" ").map(n => n[0]).join("")}
-                  </span>
+
+                {/* Glass background */}
+                <div className="absolute inset-[6px] rounded-full bg-background/90 backdrop-blur-md" />
+
+                {/* Image container (no overlap) */}
+                <div className="absolute inset-[12px] rounded-full overflow-hidden border border-primary/20">
+                  <Image
+                    src="/profile-pic.jpeg"
+                    alt="Rudra Narayan Maharana"
+                    fill
+                    priority
+                    //className="object-cover grayscale hover:grayscale-0 transition-all duration-500"
+                    className="object-cover transition-all duration-500 hover:grayscale"
+                  />
                 </div>
               </motion.div>
+
             </MagneticWrapper>
           </FloatingElement>
 
+
+
+
+
+
+
+
           {/* Title */}
-          <motion.h1 
+          <motion.h1
             className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-4 tracking-tight"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -77,8 +107,8 @@ export function HeroSection() {
           >
             <span className="text-balance">{personalInfo.name}</span>
           </motion.h1>
-          
-          <motion.p 
+
+          <motion.p
             className="text-xl md:text-2xl text-primary font-medium mb-4"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -87,7 +117,7 @@ export function HeroSection() {
             {personalInfo.title}
           </motion.p>
 
-          <motion.p 
+          <motion.p
             className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-8 leading-relaxed text-balance"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -96,8 +126,14 @@ export function HeroSection() {
             {personalInfo.tagline}
           </motion.p>
 
+
+
+
+
+
+
           {/* CTA Buttons */}
-          <motion.div 
+          <motion.div
             className="flex flex-wrap items-center justify-center gap-4 mb-12"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -117,8 +153,14 @@ export function HeroSection() {
             </a>
           </motion.div>
 
+
+
+
+
+
+
           {/* Social Links */}
-          <motion.div 
+          <motion.div
             className="flex items-center justify-center gap-4"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -148,6 +190,13 @@ export function HeroSection() {
             ))}
           </motion.div>
         </div>
+
+
+
+
+
+
+
 
         {/* Scroll Indicator */}
         <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">

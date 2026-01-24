@@ -1,51 +1,84 @@
 'use client';
 
+
+
+//PERSONAL DATA
+
+
+
 export const personalInfo = {
-  name: "Alex Chen",
+  name: "Rudra",
   title: "Full Stack Developer",
   tagline: "I build accessible, pixel-perfect digital experiences for the web.",
-  email: "alex@example.com",
-  phone: "+1 (555) 123-4567",
-  location: "San Francisco, CA",
-  github: "https://github.com",
-  linkedin: "https://linkedin.com",
-  twitter: "https://twitter.com",
-  resumeUrl: "/resume.pdf",
+  email: "rudra1337.dev@gmail.com",
+  phone: "+91 7205094809",
+  location: "India IN",
+  github: "https://github.com/rudra1337-dev",
+  linkedin: "https://www.linkedin.com/in/rudra-narayan-maharana/",
+  twitter: "https://x.com/rudra1337_dev",
+  resumeUrl: "/rudra-resume.pdf",
 }
+
+
+
+
+
+//SKILLS DATA
+
+
+
 
 export const skills = {
   frontend: [
-    { name: "React", level: 95, description: "Built 15+ production apps", icon: "react" },
-    { name: "Next.js", level: 90, description: "SSR, SSG, ISR expertise", icon: "nextjs" },
-    { name: "TypeScript", level: 88, description: "Type-safe development", icon: "typescript" },
-    { name: "Tailwind CSS", level: 92, description: "Utility-first styling", icon: "tailwind" },
-    { name: "Vue.js", level: 75, description: "Component architecture", icon: "vue" },
+    { name: "React", level: 80, description: "Built 4+ production apps", icon: "react" },
+    //{ name: "Next.js", level: 90, description: "SSR, SSG, ISR expertise", icon: "nextjs" },
+    //{ name: "TypeScript", level: 88, description: "Type-safe development", icon: "typescript" },
+    { name: "Bootstrap CSS", level: 75, description: "Utility-first styling", icon: "bootstrap" },
+    //{ name: "Vue.js", level: 75, description: "Component architecture", icon: "vue" },
   ],
   backend: [
-    { name: "Node.js", level: 88, description: "REST APIs, microservices", icon: "nodejs" },
-    { name: "Python", level: 82, description: "Django, FastAPI", icon: "python" },
+    { name: "Node.js", level: 70, description: "REST APIs, microservices", icon: "nodejs" },
+    //{ name: "Python", level: 10, description: "Django, FastAPI", icon: "python" },
     { name: "Express", level: 85, description: "Server-side apps", icon: "express" },
-    { name: "GraphQL", level: 78, description: "API development", icon: "graphql" },
+    //{ name: "GraphQL", level: 78, description: "API development", icon: "graphql" },
   ],
   database: [
-    { name: "PostgreSQL", level: 85, description: "Relational data modeling", icon: "postgresql" },
+    //{ name: "PostgreSQL", level: 85, description: "Relational data modeling", icon: "postgresql" },
     { name: "MongoDB", level: 80, description: "NoSQL solutions", icon: "mongodb" },
-    { name: "Redis", level: 75, description: "Caching strategies", icon: "redis" },
-    { name: "Prisma", level: 82, description: "ORM expertise", icon: "prisma" },
+    //{ name: "Redis", level: 75, description: "Caching strategies", icon: "redis" },
+    //{ name: "Prisma", level: 82, description: "ORM expertise", icon: "prisma" },
   ],
   languages: [
     { name: "JavaScript", level: 95, description: "ES6+, async patterns", icon: "javascript" },
-    { name: "TypeScript", level: 88, description: "Advanced types", icon: "typescript" },
-    { name: "Python", level: 82, description: "Scripting, automation", icon: "python" },
-    { name: "Go", level: 65, description: "Learning journey", icon: "go" },
+    { name: "TypeScript", level: 20, description: "Advanced types", icon: "typescript" },
+    { name: "Python", level: 10, description: "Scripting, automation", icon: "python" },
+    { name: "Go", level: 5, description: "Learning journey", icon: "go" },
+    { name: "Java", level: 90, descrription: "DSA Practice", icon: "java" },
+    { name: "C", level: 90, descrription: "Strong fundamentals", icon: "c" },
   ],
   other: [
     { name: "Git", level: 90, description: "Version control", icon: "git" },
-    { name: "Docker", level: 78, description: "Containerization", icon: "docker" },
-    { name: "AWS", level: 72, description: "Cloud services", icon: "aws" },
-    { name: "Figma", level: 70, description: "Design collaboration", icon: "figma" },
+    { name: "Git-Hub", level: 80, description: "Opensourse practice", icon: "git hub" },
+    //{ name: "Docker", level: 78, description: "Containerization", icon: "docker" },
+    //{ name: "AWS", level: 72, description: "Cloud services", icon: "aws" },
+    //{ name: "Figma", level: 70, description: "Design collaboration", icon: "figma" },
   ],
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+//PROJECT DATA
+
 
 export const projects = [
   {
@@ -116,6 +149,27 @@ export const projects = [
   },
 ]
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//BLOG POST DATA
+
+
+
+
+
+
 export const blogs = [
   {
     id: "mastering-react-hooks",
@@ -123,7 +177,7 @@ export const blogs = [
     description: "Deep dive into useState, useEffect, useContext, and custom hooks with practical examples.",
     image: "/blogs/react-hooks.jpg",
     date: "2025-12-15",
-    author: "Alex Chen",
+    author: "Rudra",
     content: `
 # Mastering React Hooks: A Complete Guide
 
@@ -161,7 +215,7 @@ React Hooks provide a more direct API to the React concepts you already know. Th
     description: "Exploring the latest features, improvements, and breaking changes in Next.js 15.",
     image: "/blogs/nextjs.jpg",
     date: "2025-11-28",
-    author: "Alex Chen",
+    author: "Rudra",
     content: `
 # What's New in Next.js 15
 
@@ -191,7 +245,7 @@ Next.js 15 represents a significant step forward for the framework, with improve
     description: "Learn the latest TypeScript patterns and practices to write better, more maintainable code.",
     image: "/blogs/typescript.jpg",
     date: "2025-10-20",
-    author: "Alex Chen",
+    author: "Rudra",
     content: `
 # TypeScript Best Practices for 2025
 
@@ -217,15 +271,42 @@ Following these best practices will help you write more maintainable and type-sa
   },
 ]
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//ABOUT DATA
+
+
+
 export const aboutData = {
-  introduction: "I'm a passionate full-stack developer with 5+ years of experience building web applications. I love turning complex problems into simple, beautiful solutions.",
+  // introduction: "I'm a passionate full-stack developer with 5+ years of experience building web applications. I love turning complex problems into simple, beautiful solutions.",
+
+  introduction: "I’m a Computer Science undergraduate focused on building strong fundamentals and real-world skills. I work with React, Next.js, backend development, and core CS concepts, and I believe consistency and deep learning matter more than shortcuts. My goal is to grow into a skilled software engineer and contribute to impactful projects.",
+
   responsibilities: [
-    "Developing and maintaining web applications using React and Next.js",
-    "Building scalable backend services with Node.js and Python",
-    "Collaborating with design teams to implement pixel-perfect UIs",
-    "Code reviews and mentoring junior developers",
+    "Developing and maintaining web applications using React and backend technologies",
+    "Building scalable backend services with Node.js and Express.js",
+    "Collaborating with design teams to implement pixel-perfect systems",
+    //"Code reviews and mentoring junior developers",
     "Writing technical documentation and best practices guides",
   ],
+
   strengths: [
     { title: "Problem Solving", description: "Breaking down complex challenges into manageable solutions" },
     { title: "Clean Code", description: "Writing maintainable, well-documented, and tested code" },
@@ -244,7 +325,7 @@ export const aboutData = {
     "Build products that impact millions of users",
   ],
   personality: {
-    hobbies: ["Photography", "Hiking", "Reading tech blogs", "Playing chess", "Coffee exploration"],
+    hobbies: ["Photography", "Hiking", "Reading tech blogs"],
     mindset: "I believe in continuous improvement and the power of collaboration. Every line of code is an opportunity to learn and grow.",
   },
 }

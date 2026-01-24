@@ -50,7 +50,7 @@ export function Navigation() {
             className="flex items-center gap-2 text-xl font-bold text-foreground hover:text-primary transition-colors"
           >
             <Code2 className="h-6 w-6" />
-            <span>Alex Chen</span>
+            <span>Rudra</span>
           </Link>
 
           {/* Desktop Navigation */}
