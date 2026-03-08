@@ -13,6 +13,7 @@ const quickLinks = [
 ];
 const socialLinks = [
     { href: personalInfo.github, icon: Github, label: "GitHub" },
+    { href: personalInfo.leetcode, icon: Code2, label: "LeetCode" },
     { href: personalInfo.linkedin, icon: Linkedin, label: "LinkedIn" },
     { href: personalInfo.twitter, icon: Twitter, label: "Twitter" },
     { href: `mailto:${personalInfo.email}`, icon: Mail, label: "Email" },

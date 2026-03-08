@@ -2,5 +2,5 @@ User-agent: *
 Allow: /
 Disallow: /admin
 
-Sitemap: https://rudra-dev.onrender.com/sitemap.xml
-Host: https://rudra-dev.onrender.com
+Sitemap: https://rudra1337-dev.vercel.app/sitemap.xml
+Host: https://rudra1337-dev.vercel.app

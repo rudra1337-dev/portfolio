@@ -41,13 +41,13 @@ export function FeaturedProjects() {
                 <Interactive3DCard className="h-full" rotationIntensity={10}>
                   <article className="group bg-card/80 backdrop-blur-sm border border-border rounded-2xl overflow-hidden hover:border-primary/50 transition-all duration-500 hover:shadow-2xl h-full flex flex-col">
                     {/* Image */}
-                    <div className="relative h-48 bg-gradient-to-br from-primary/20 to-accent/20 overflow-hidden">
-                      <motion.div className="absolute inset-0 flex items-center justify-center" whileHover={{ scale: 1.1, rotate: 5 }} transition={{ duration: 0.3 }}>
-                        <span className="text-7xl font-bold text-foreground/10">
-                          {project.title.slice(0, 2)}
-                        </span>
-                      </motion.div>
-                      <div className="absolute inset-0 bg-gradient-to-t from-card/50 to-transparent"/>
+                    <div className="relative h-48 overflow-hidden">
+                      <img
+                        src={project.image}
+                        alt={`${project.title} preview`}
+                        className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-card/60 to-black/10"/>
                     </div>
 
                     {/* Content */}

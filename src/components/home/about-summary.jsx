@@ -13,6 +13,7 @@ const highlights = [
 export function AboutSummary() {
     const [isVisible, setIsVisible] = useState(false);
     const sectionRef = useRef(null);
+    const techJourney = aboutData.techJourney ?? aboutData.tech ?? {};
     useEffect(() => {
         const observer = new IntersectionObserver(([entry]) => {
             if (entry.isIntersecting) {
@@ -41,7 +42,7 @@ export function AboutSummary() {
                 {aboutData.introduction}
               </p>
               <p className="text-muted-foreground leading-relaxed mb-8">
-                {aboutData.techJourney.current}
+                {techJourney.current ?? ""}
               </p>
               <Button asChild className="gap-2 rounded-full">
                 <Link to="/about">

@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import { useState } from "react";
-import { Mail, Phone, MapPin, Send, Github, Linkedin, Twitter, CheckCircle2 } from "lucide-react";
+import { Mail, Phone, MapPin, Send, Github, Linkedin, Twitter, CheckCircle2, Code2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { personalInfo } from "@/lib/data";
 import emailjs from "@emailjs/browser";
@@ -30,6 +30,7 @@ const contactMethods = [
 ];
 const socialLinks = [
     { icon: Github, href: personalInfo.github, label: "GitHub" },
+    { icon: Code2, href: personalInfo.leetcode, label: "LeetCode" },
     { icon: Linkedin, href: personalInfo.linkedin, label: "LinkedIn" },
     { icon: Twitter, href: personalInfo.twitter, label: "Twitter" },
 ];

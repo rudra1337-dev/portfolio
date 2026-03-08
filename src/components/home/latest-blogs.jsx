@@ -48,12 +48,17 @@ export function LatestBlogs() {
                   <Interactive3DCard rotationIntensity={12}>
                     <div className="bg-card/80 backdrop-blur-sm border border-border rounded-2xl overflow-hidden hover:border-primary/50 transition-all duration-300 hover:shadow-2xl">
                       {/* Image */}
-                      <div className="relative h-48 bg-gradient-to-br from-primary/10 to-accent/10 overflow-hidden">
-                        <motion.div className="absolute inset-0 flex items-center justify-center" whileHover={{ scale: 1.1 }} transition={{ duration: 0.3 }}>
-                          <span className="text-7xl font-bold text-foreground/10">
-                            {blog.title.slice(0, 2)}
-                          </span>
-                        </motion.div>
+                      <div className="relative h-48 overflow-hidden">
+                        <motion.img
+                          src={blog.image}
+                          alt={blog.title}
+                          className="h-full w-full object-cover"
+                          whileHover={{ scale: 1.08 }}
+                          transition={{ duration: 0.3 }}
+                          onError={(e) => {
+                            e.currentTarget.src = "/placeholder.jpg";
+                          }}
+                        />
                         <div className="absolute inset-0 bg-gradient-to-t from-card/60 to-transparent"/>
                       </div>
 

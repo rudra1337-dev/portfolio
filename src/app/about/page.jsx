@@ -7,6 +7,7 @@ import { aboutData, skills } from "@/lib/data";
 export default function AboutPage() {
     const [isVisible, setIsVisible] = useState(false);
     const sectionRef = useRef(null);
+    const techJourney = aboutData.techJourney ?? aboutData.tech ?? {};
     useEffect(() => {
         const observer = new IntersectionObserver(([entry]) => {
             if (entry.isIntersecting) {
@@ -27,13 +28,24 @@ export default function AboutPage() {
       {/* Hero Section */}
       <section className="py-16 lg:py-24 bg-secondary/30">
         <div className="container mx-auto px-4 lg:px-8">
-          <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
+          <div className="max-w-5xl mx-auto">
+            <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-10 text-center">
               About Me
             </h1>
-            <p className="text-xl text-muted-foreground leading-relaxed">
-              {aboutData.introduction}
-            </p>
+            <div className="grid md:grid-cols-[280px_1fr] gap-8 md:gap-10 items-center">
+              <div className="mx-auto md:mx-0 w-full max-w-[320px]">
+                <div className="overflow-hidden rounded-2xl border border-border bg-card shadow-sm">
+                  <img
+                    src="/profile-pic.jpeg"
+                    alt="Rudra Narayan Maharana"
+                    className="h-[360px] w-full object-cover"
+                  />
+                </div>
+              </div>
+              <p className="text-lg md:text-xl text-muted-foreground leading-relaxed text-left">
+                {aboutData.introduction}
+              </p>
+            </div>
           </div>
         </div>
       </section>
@@ -122,7 +134,7 @@ export default function AboutPage() {
                     How It Started
                   </h3>
                   <p className="text-muted-foreground leading-relaxed">
-                    {aboutData.techJourney.start}
+                    {techJourney.start ?? ""}
                   </p>
                 </div>
               </div>
@@ -139,7 +151,7 @@ export default function AboutPage() {
                     What Drives Me
                   </h3>
                   <p className="text-muted-foreground leading-relaxed">
-                    {aboutData.techJourney.motivation}
+                    {techJourney.motivation ?? ""}
                   </p>
                 </div>
               </div>
@@ -155,7 +167,7 @@ export default function AboutPage() {
                     Where I Am Now
                   </h3>
                   <p className="text-muted-foreground leading-relaxed">
-                    {aboutData.techJourney.current}
+                    {techJourney.current ?? ""}
                   </p>
                 </div>
               </div>

@@ -8,6 +8,7 @@ export const personalInfo = {
     phone: "+91 7205094809",
     location: "India IN",
     github: "https://github.com/rudra1337-dev",
+    leetcode: "https://leetcode.com/u/rudra1337-dev/",
     linkedin: "https://www.linkedin.com/in/rudra-narayan-maharana/",
     twitter: "https://x.com/rudra1337_dev",
     resumeUrl: "/rudra-resume.pdf",
@@ -52,172 +53,167 @@ export const skills = {
 //PROJECT DATA
 export const projects = [
     {
-        id: "ecommerce-platform",
-        title: "E-Commerce Platform",
-        description: "A full-stack e-commerce solution with real-time inventory management, payment processing, and admin dashboard.",
-        image: "/projects/ecommerce.jpg",
-        tags: ["fullstack", "e-commerce"],
-        techStack: ["Next.js", "TypeScript", "Prisma", "Stripe", "PostgreSQL"],
-        liveUrl: "https://example.com",
-        githubUrl: "https://github.com",
+        id: "gatecrowd-platform",
+        title: "GateCrowd - Crowd Tracking Platform",
+        description: "GateCrowd is a full-stack crowd tracking platform designed to monitor and manage crowd flow at different entry points. The platform includes a secure authentication system, real-time crowd data tracking, and a user-friendly dashboard for monitoring crowd activity. It uses JWT-based authentication with bcrypt password hashing and provides protected API routes through Express middleware.",
+        image: "/gatecrowd.png",
+        tags: ["fullstack", "crowd-tracking", "authentication"],
+        techStack: ["React", "Node.js", "Express.js", "MongoDB", "JWT", "bcrypt"],
+        liveUrl: "https://gatecrowd.vercel.app",
+        githubUrl: "https://github.com/rudra1337-dev/gatecrowd",
         featured: true,
-    },
-    {
-        id: "task-management",
-        title: "Task Management App",
-        description: "Collaborative task management with real-time updates, team workspaces, and Kanban boards.",
-        image: "/projects/taskapp.jpg",
-        tags: ["fullstack", "productivity"],
-        techStack: ["React", "Node.js", "Socket.io", "MongoDB"],
-        liveUrl: "https://example.com",
-        githubUrl: "https://github.com",
-        featured: true,
-    },
-    {
-        id: "ai-chatbot",
-        title: "AI Chat Assistant",
-        description: "Intelligent chatbot powered by GPT-4 with context awareness and multi-language support.",
-        image: "/projects/chatbot.jpg",
-        tags: ["ai", "frontend"],
-        techStack: ["Next.js", "OpenAI", "Tailwind", "Vercel AI SDK"],
-        liveUrl: "https://example.com",
-        githubUrl: "https://github.com",
-        featured: true,
-    },
-    {
-        id: "portfolio-generator",
-        title: "Portfolio Generator",
-        description: "Dynamic portfolio website generator with customizable themes and content management.",
-        image: "/projects/portfolio.jpg",
-        tags: ["frontend", "ui-clone"],
-        techStack: ["React", "TypeScript", "Tailwind CSS", "MDX"],
-        liveUrl: "https://example.com",
-        githubUrl: "https://github.com",
-        featured: false,
-    },
-    {
-        id: "weather-dashboard",
-        title: "Weather Dashboard",
-        description: "Real-time weather tracking with interactive maps and 7-day forecasts.",
-        image: "/projects/weather.jpg",
-        tags: ["frontend", "api"],
-        techStack: ["React", "OpenWeather API", "Chart.js", "Mapbox"],
-        liveUrl: "https://example.com",
-        githubUrl: "https://github.com",
-        featured: false,
-    },
-    {
-        id: "social-media-clone",
-        title: "Social Media Clone",
-        description: "Instagram-inspired social platform with stories, posts, and real-time messaging.",
-        image: "/projects/social.jpg",
-        tags: ["fullstack", "ui-clone"],
-        techStack: ["Next.js", "Supabase", "Tailwind", "Socket.io"],
-        liveUrl: "https://example.com",
-        githubUrl: "https://github.com",
-        featured: false,
     },
 ];
+
+
+
 //BLOG POST DATA
 export const blogs = [
     {
-        id: "mastering-react-hooks",
-        title: "Mastering React Hooks: A Complete Guide",
-        description: "Deep dive into useState, useEffect, useContext, and custom hooks with practical examples.",
-        image: "/blogs/react-hooks.jpg",
-        date: "2025-12-15",
+        id: "why-dsa-matters",
+        title: "Why Every Developer Should Master Data Structures and Algorithms",
+        description: "Understanding why Data Structures and Algorithms are essential for problem solving, system efficiency, and becoming a strong software engineer.",
+        image: "https://img-c.udemycdn.com/course/480x270/6532335_b02e_2.jpg?w=3840&q=75",
+        date: "2026-03-09",
         author: "Rudra",
         content: `
-# Mastering React Hooks: A Complete Guide
+# Why Every Developer Should Master Data Structures and Algorithms
 
-React Hooks have revolutionized how we write React components. In this comprehensive guide, we'll explore the most essential hooks and learn how to create custom ones.
+Data Structures and Algorithms (DSA) form the foundation of computer science. Whether you want to become a backend engineer, system developer, or competitive programmer, strong DSA skills are essential.
 
-## Introduction to Hooks
+## Problem Solving Ability
 
-Hooks allow you to use state and other React features without writing a class. They let you reuse stateful logic between components.
+DSA teaches you how to think logically about problems. Instead of writing random code, you learn how to analyze the problem, choose the correct data structure, and apply the right algorithm.
 
-## useState Hook
+For example:
+- Arrays help manage sequential data
+- HashMaps allow fast lookups
+- Trees help represent hierarchical data
+- Graphs help model networks
 
-The useState hook is the most basic hook. It allows you to add state to functional components.
+Understanding these structures allows developers to design efficient solutions.
 
-\`\`\`javascript
-const [count, setCount] = useState(0);
-\`\`\`
+## Performance and Optimization
 
-## useEffect Hook
+A program that works is good. A program that works efficiently is better.
 
-useEffect lets you perform side effects in function components. It serves the same purpose as componentDidMount, componentDidUpdate, and componentWillUnmount in React classes.
+Algorithms help you optimize:
+- Time Complexity
+- Space Complexity
+- Scalability of applications
 
-## Custom Hooks
+For example, searching an element in:
+- Array (Linear Search) → O(n)
+- Sorted Array (Binary Search) → O(log n)
 
-Custom hooks allow you to extract component logic into reusable functions. A custom hook is a JavaScript function whose name starts with "use".
+Choosing the right algorithm can make a massive difference in performance.
+
+## Real-World Applications
+
+DSA is used everywhere:
+
+- Search engines use graph algorithms
+- Social media platforms use hashing
+- Navigation systems use shortest path algorithms
+- Databases rely on trees and indexing structures
+
+This means learning DSA directly improves your ability to build real systems.
+
+## My Learning Journey
+
+Currently, I am focusing on mastering DSA step by step by learning the core concepts and solving problems consistently.
+
+My focus areas include:
+- Arrays and Strings
+- Linked Lists
+- Stacks and Queues
+- Trees and Graphs
+- Dynamic Programming
 
 ## Conclusion
 
-React Hooks provide a more direct API to the React concepts you already know. They allow you to organize the logic inside a component into reusable isolated units.
+Mastering DSA is not about memorizing algorithms. It is about developing the mindset to solve problems efficiently.
+
+If you want to become a strong developer, investing time in Data Structures and Algorithms is one of the best decisions you can make.
     `,
-        likes: 142,
+        likes: 12,
     },
     {
-        id: "nextjs-15-features",
-        title: "What's New in Next.js 15: A Developer's Perspective",
-        description: "Exploring the latest features, improvements, and breaking changes in Next.js 15.",
-        image: "/blogs/nextjs.jpg",
-        date: "2025-11-28",
+        id: "web-authentication-basics",
+        title: "How Authentication Works in Modern Web Applications",
+        description: "A beginner-friendly explanation of how user authentication works using JWT, password hashing, and secure backend practices.",
+        image: "https://media.geeksforgeeks.org/wp-content/uploads/20250410101010106698/Understanding-Web-Authentication-behind-the-login-screen.webp",
+        date: "2026-03-08",
         author: "Rudra",
         content: `
-# What's New in Next.js 15
+# How Authentication Works in Modern Web Applications
 
-Next.js 15 brings exciting new features and improvements. Let's explore what's new and how it affects your development workflow.
+Authentication is a core feature of almost every modern web application. Whether it is a social media platform, e-commerce site, or SaaS product, users need a secure way to log in and access their accounts.
 
-## Turbopack Stability
+## Step 1: User Registration
 
-Turbopack is now stable and provides significantly faster build times compared to webpack.
+When a user signs up, the system collects basic information such as:
 
-## Server Actions Improvements
+- Username
+- Email
+- Password
 
-Server Actions have been enhanced with better error handling and improved type safety.
+However, passwords should never be stored in plain text.
 
-## Enhanced Caching
+Instead, we hash them using libraries like bcrypt.
 
-The new caching strategies in Next.js 15 provide better control over how your data is cached and revalidated.
+Example:
+Password → bcrypt hash → stored in database
+
+This ensures that even if the database is compromised, the actual passwords remain secure.
+
+## Step 2: User Login
+
+When the user logs in:
+
+1. The user sends email and password
+2. The server compares the password with the stored hashed password
+3. If the password matches, the server generates an authentication token
+
+## Step 3: JWT Token Generation
+
+A JSON Web Token (JWT) is created and sent back to the client.
+
+This token contains:
+- User ID
+- Expiration time
+- Digital signature
+
+The token acts like a digital identity for the user.
+
+## Step 4: Accessing Protected Routes
+
+Whenever the user requests protected resources:
+
+- The token is sent in the request header
+- The server verifies the token
+- If valid, access is granted
+
+This is commonly implemented using middleware in backend frameworks like Express.js.
+
+## Real Project Example
+
+In my project GateCrowd, I implemented authentication using:
+
+- Node.js
+- Express.js
+- MongoDB
+- JWT
+- bcrypt
+
+The system allows users to register, log in, and access protected routes securely.
 
 ## Conclusion
 
-Next.js 15 represents a significant step forward for the framework, with improvements across performance, developer experience, and functionality.
+Authentication is a fundamental part of backend development. Understanding how password hashing, token-based authentication, and middleware work is essential for building secure web applications.
     `,
-        likes: 98,
-    },
-    {
-        id: "typescript-best-practices",
-        title: "TypeScript Best Practices for 2025",
-        description: "Learn the latest TypeScript patterns and practices to write better, more maintainable code.",
-        image: "/blogs/typescript.jpg",
-        date: "2025-10-20",
-        author: "Rudra",
-        content: `
-# TypeScript Best Practices for 2025
-
-TypeScript continues to evolve, and so do the best practices for using it effectively. Here are the latest patterns and practices.
-
-## Use Strict Mode
-
-Always enable strict mode in your tsconfig.json for better type safety.
-
-## Prefer Interfaces for Object Types
-
-While types and interfaces are similar, interfaces are generally preferred for object shapes.
-
-## Use Discriminated Unions
-
-Discriminated unions are powerful for handling different variants of a type.
-
-## Conclusion
-
-Following these best practices will help you write more maintainable and type-safe TypeScript code.
-    `,
-        likes: 76,
-    },
+        likes: 18,
+    }
 ];
 //ABOUT DATA
 export const aboutData = {
@@ -236,10 +232,10 @@ export const aboutData = {
         { title: "Communication", description: "Effectively collaborating with cross-functional teams" },
         { title: "Continuous Learning", description: "Always staying updated with the latest technologies" },
     ],
-    techJourney: {
-        start: "My journey began in 2019 when I built my first website using HTML, CSS, and JavaScript. That spark of creating something from nothing ignited a passion that hasn't faded.",
-        motivation: "What drives me is the ability to solve real-world problems through code. Seeing users interact with something I've built gives me immense satisfaction.",
-        current: "Today, I specialize in full-stack development with a focus on React ecosystem. I'm constantly exploring new technologies and contributing to open-source projects.",
+    tech: {
+        start: "My journey into programming started during my BTech in Computer Science when I began exploring how software actually works behind the scenes. Starting with C programming and problem solving, I gradually developed a strong interest in algorithms, backend systems, and building real applications.",
+        motivation: "What drives me is mastering the fundamentals of computer science and solving challenging problems through code. I enjoy breaking down complex problems using Data Structures and Algorithms and building secure backend systems that power real applications.",
+        current: "Currently, I am focused on becoming a strong software engineer.I am actively practicing Data Structures and Algorithms, learning backend development with Node.js, Express.js, and MongoDB, and building projects such as authentication systems using JWT and bcrypt.My goal is to continuously improve my programming skills and contribute to impactful projects and open- source communities.",
     },
     goals: [
         "Lead engineering teams at innovative tech companies",
