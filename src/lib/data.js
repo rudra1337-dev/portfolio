@@ -213,8 +213,248 @@ The system allows users to register, log in, and access protected routes securel
 Authentication is a fundamental part of backend development. Understanding how password hashing, token-based authentication, and middleware work is essential for building secure web applications.
     `,
         likes: 18,
+    },
+    {
+        id: "design-twitter-leetcode-355",
+        title: "Design Twitter (LeetCode 355) — System Design + Heap Approach Explained",
+        description: "A deep dive into solving LeetCode 355 Design Twitter using HashMap, Heap, and smart data structures, along with complexity analysis and optimization insights.",
+        image: "https://i.ytimg.com/vi/pNichitDD2E/maxresdefault.jpg",
+        date: "2026-04-06",
+        author: "Rudra",
+        content: `
+# 🐦 Design Twitter (LeetCode 355)
+
+Today I worked on one of the most interesting system design problems on LeetCode — **Design Twitter**.
+
+This problem is not just about coding, it's about thinking like a backend engineer and designing a scalable system.
+
+---
+
+## 📌 Problem Overview
+
+We need to design a simplified Twitter where users can:
+
+- Post tweets
+- Follow / Unfollow users
+- View the 10 most recent tweets in their news feed
+
+---
+
+## 🧠 Key Idea
+
+To solve this problem efficiently, we need to combine:
+
+- HashMap → Store users
+- HashSet → Store follow relationships
+- LinkedList → Store tweets (latest first)
+- PriorityQueue (Max Heap) → Get most recent tweets
+
+---
+
+## ⚙️ Approach
+
+### Step 1: Store Users
+
+Each user has:
+- A list of tweets
+- A set of followees
+
+---
+
+### Step 2: Store Tweets
+
+Each tweet has:
+- tweetId
+- timestamp (to maintain order)
+- userId
+
+---
+
+### Step 3: News Feed Logic
+
+- Collect tweets from:
+  - The user
+  - All followees
+- Push all tweets into a Max Heap (based on time)
+- Extract top 10 tweets
+
+---
+
+## 💻 Implementation
+
+\`\`\`java
+class Twitter {
+
+    class Tweet{
+        int id;
+        int time;
+        int userId;
+
+        Tweet(int id, int time, int userId){
+            this.id = id;
+            this.time = time;
+            this.userId = userId;
+        }
     }
+
+    class User{
+        int id;
+        LinkedList<Tweet> tweets;
+        Set<Integer> followees;
+
+        User(int id){
+            this.id = id;
+            tweets = new LinkedList();
+            followees = new HashSet<>();
+            this.addFollowee(id);
+        }
+
+        public void addTweet(Tweet t){
+            tweets.addFirst(t);
+        }
+
+        public void addFollowee(int followerId){
+            this.followees.add(followerId);
+        }
+
+        public void removeFollowee(int followerId){
+            this.followees.remove(followerId);
+        }
+    }
+
+    HashMap<Integer, User> user;
+    int currTime;
+
+    public Twitter() {
+        user = new HashMap<>();
+        currTime = 0;
+    }
+
+    public void postTweet(int userId, int tweetId) {
+        if(!user.containsKey(userId)){
+            user.put(userId, new User(userId));
+        }
+
+        Tweet tweet = new Tweet(tweetId, currTime, userId);
+        User u = user.get(userId);
+        u.addTweet(tweet);
+        currTime++;
+    }
+
+    public List<Integer> getNewsFeed(int userId) {
+        if(!user.containsKey(userId)){
+            return new LinkedList<>();
+        }
+
+        PriorityQueue<Tweet> pq = new PriorityQueue<>(
+            (a, b) -> b.time - a.time
+        );
+
+        User u = user.get(userId);
+        for(int f : u.followees){
+            for(Tweet t : user.get(f).tweets){
+                pq.add(t);
+            }
+        }
+
+        LinkedList<Integer> feeds = new LinkedList<>();
+        int count = 10;
+        
+        while(!pq.isEmpty() && count > 0){
+            feeds.add(pq.remove().id);
+            count--;
+        }
+
+        return feeds;
+    }
+
+    public void follow(int followerId, int followeeId) {
+        if(!user.containsKey(followerId)){
+            user.put(followerId, new User(followerId));
+        }
+        
+        if(!user.containsKey(followeeId)){
+            user.put(followeeId, new User(followeeId));
+        }
+
+        user.get(followerId).addFollowee(followeeId);
+    }
+
+    public void unfollow(int followerId, int followeeId) {
+        if(!user.containsKey(followerId)){
+            user.put(followerId, new User(followerId));
+        }
+        
+        if(!user.containsKey(followeeId)){
+            user.put(followeeId, new User(followeeId));
+        }
+
+        user.get(followerId).removeFollowee(followeeId);
+    }
+}
+\`\`\`
+
+---
+
+## ⚠️ Complexity Analysis
+
+- postTweet → O(1)
+- follow/unfollow → O(1)
+- getNewsFeed → O(F × T × log(F×T))
+
+Where:
+- F = number of followees
+- T = tweets per user
+
+---
+
+## 🚨 Optimization Insight
+
+The current solution pushes ALL tweets into the heap, which is inefficient.
+
+Better approach:
+- Use Heap like Merge K Sorted Lists
+- Only process recent tweets
+
+Optimized Complexity:
+- O((F + 10) log F)
+
+---
+
+## 🧠 What I Learned
+
+- Designing systems requires choosing the right data structures
+- Heap is powerful for "Top K" problems
+- Optimization is what separates good solutions from great ones
+
+---
+
+## 🏁 Conclusion
+
+This problem is a perfect mix of:
+- System Design
+- Data Structures
+- Real-world thinking
+
+---
+
+## 🚀 Next Steps
+
+- Implement optimized solution
+- Solve Merge K Sorted Lists
+- Practice more Heap-based problems
+
+---
+
+💬 Final Thought:
+
+"Don’t just solve problems. Learn how to design systems that scale."
+    `,
+        likes: 14,
+    },
 ];
+
+
 //ABOUT DATA
 export const aboutData = {
     // introduction: "I'm a passionate full-stack developer with 5+ years of experience building web applications. I love turning complex problems into simple, beautiful solutions.",
