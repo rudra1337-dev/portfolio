@@ -13,6 +13,8 @@ export const personalInfo = {
     twitter: "https://x.com/rudra1337_dev",
     resumeUrl: "/rudra-resume.pdf",
 };
+
+
 //SKILLS DATA
 export const skills = {
     frontend: [
@@ -50,6 +52,8 @@ export const skills = {
         //{ name: "Figma", level: 70, description: "Design collaboration", icon: "figma" },
     ],
 };
+
+
 //PROJECT DATA
 export const projects = [
     {
@@ -63,6 +67,18 @@ export const projects = [
         githubUrl: "https://github.com/rudra1337-dev/gatecrowd",
         featured: true,
     },
+
+    {
+        id: "clock-app",
+        title: "Multi-Tool Clock Web App",
+        description: "A browser-based multi-tool clock application built using HTML, CSS, and Vanilla JavaScript. It includes four main utilities: a live digital clock, alarm system, countdown timer, and stopwatch with lap tracking. The app features a responsive UI, theme toggle, sound feedback, and vibration support for better user interaction. It is designed as a single-page application with smooth navigation between tools.",
+        image: "/clock-app.png",
+        tags: ["frontend", "javascript", "productivity", "UI"],
+        techStack: ["HTML", "CSS", "JavaScript", "Font Awesome"],
+        liveUrl: "https://rudra1337-dev.github.io/Clock-APP",
+        githubUrl: "https://github.com/rudra1337-dev/Clock-APP",
+        featured: true,
+    }
 ];
 
 
