@@ -468,6 +468,190 @@ This problem is a perfect mix of:
     `,
         likes: 14,
     },
+
+    {
+        id: "same-logic-different-result-bug",
+        title: "Same Logic, Different Result? A Subtle Bug I Faced in Binary Search",
+        description: "A real debugging experience where two logically identical loops produced different results, and what it taught me about clean coding and binary search.",
+        image: "https://media.licdn.com/dms/image/v2/D5622AQHHN-fM6keSwQ/feedshare-shrink_1280/B56Z3yBtOKKYAM-/0/1777882027179?e=1779321600&v=beta&t=LXZ3nrxSbLpVcdFU3QxTWtkm7TRQ_xRDNSGkserGttM",
+        date: "2026-05-04",
+        author: "Rudra",
+        content: `
+
+![Debugging Insight](https://media.licdn.com/dms/image/v2/D5622AQHHN-fM6keSwQ/feedshare-shrink_1280/B56Z3yBtOKKYAM-/0/1777882027179?e=1779321600&v=beta&t=LXZ3nrxSbLpVcdFU3QxTWtkm7TRQ_xRDNSGkserGttM)
+
+# Same Logic, Different Result? 🤯
+
+While solving a Binary Search Tree problem on LeetCode, I encountered something that genuinely surprised me:
+
+> Two pieces of code that looked logically identical…  
+> but one failed and the other passed all test cases.
+
+---
+
+## 🧩 Problem Overview
+
+The task was to process queries on a BST and find:
+
+- The **largest value ≤ query (floor)**
+- The **smallest value ≥ query (ceil)**
+
+---
+
+## 🧠 Approach
+
+1. Convert BST → Sorted Array using **inorder traversal**
+2. Use **Binary Search (Lower Bound)** to find positions
+
+---
+
+## 🔍 Binary Search Implementation
+
+\`\`\`java
+private int bSearch(List<Integer> tree, int target){
+    int left = 0, right = tree.size()-1;
+    int res = tree.size();
+
+    while(left <= right){
+        int mid = left + (right - left)/2;
+
+        if(tree.get(mid) >= target){
+            res = mid;
+            right = mid - 1;
+        }else{
+            left = mid + 1;
+        }
+    }
+    return res;
+}
+\`\`\`
+
+---
+
+## ⚡ The Unexpected Bug
+
+I wrote two versions of the loop:
+
+---
+
+### ❌ Version 1 (Index-based)
+
+\`\`\`java
+for(int i = 0; i < queries.size(); i++){
+    int idx = bSearch(tree, queries.get(i));
+
+    if(tree.get(idx) == queries.get(i)){
+        // logic
+    }
+}
+\`\`\`
+
+---
+
+### ✅ Version 2 (Enhanced for-loop)
+
+\`\`\`java
+for(int q : queries){
+    int idx = bSearch(tree, q);
+
+    if(tree.get(idx) == q){
+        // logic
+    }
+}
+\`\`\`
+
+---
+
+## 😲 The Result
+
+- Version 1 → ❌ Wrong Answer  
+- Version 2 → ✅ Accepted  
+
+Both looked identical… so what went wrong?
+
+---
+
+## 🧠 Root Cause
+
+The issue was subtle:
+
+### 🔴 Repeated Access vs Stored Value
+
+In Version 1:
+\`\`\`java
+queries.get(i)
+\`\`\`
+is accessed multiple times.
+
+In Version 2:
+\`\`\`java
+int q
+\`\`\`
+stores the value once and reuses it.
+
+---
+
+![Bug Illustration](https://media.licdn.com/dms/image/v2/D5622AQGspuAlVa0evw/feedshare-shrink_1280/B56Z3yBtB9KQAM-/0/1777882026348?e=1779321600&v=beta&t=PQF1ct7_-uE5e4LGH6Kp4q0GUw_-zWWna1OoxWfOMrU)
+
+---
+
+## 🚨 Why This Matters
+
+Even small differences can cause issues:
+
+- Repeated access reduces clarity
+- Harder to debug
+- Can expose hidden edge case bugs
+
+---
+
+## ✅ The Fix
+
+Always store values when using index-based loops:
+
+\`\`\`java
+for(int i = 0; i < queries.size(); i++){
+    int q = queries.get(i);  // ✅ store once
+
+    int idx = bSearch(tree, q);
+
+    if(tree.get(idx) == q){
+        // logic
+    }
+}
+\`\`\`
+
+---
+
+## 💡 Key Takeaways
+
+✔️ Logic alone is not enough — implementation matters  
+✔️ Clean code prevents subtle bugs  
+✔️ Binary search requires careful handling of edge cases  
+✔️ Small habits → big impact  
+
+---
+
+## 🚀 Final Thought
+
+> Sometimes the bug isn’t in the algorithm…  
+> it’s in the tiny details we overlook.
+
+---
+
+## ⏱️ Complexity
+
+- Inorder Traversal → O(n)  
+- Each Query → O(log n)  
+- Total → **O(n + q log n)**  
+
+---
+
+Thanks for reading! 🚀  
+More deep dives on DSA, debugging, and backend coming soon.
+
+`
+    }
 ];
 
 
